@@ -1207,3 +1207,323 @@ a {
   text-decoration: underline;
 }
 
+/* ==========================================================================
+   Landing Page Additional Sections (Features, Bento Grid, Process, Launch CTA)
+   ========================================================================== */
+.landing-additional-sections {
+  margin: var(--spacing-xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-section);
+}
+
+.section-title-wrap {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.section-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffcc00;
+  border: 1.5px solid #18181b;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #18181b;
+  margin-bottom: var(--spacing-sm);
+  box-shadow: 2px 2px 0px #18181b;
+}
+
+.landing-section-heading {
+  font-size: clamp(24px, 2.5vw, 34px);
+  line-height: 1.2;
+  font-weight: 900;
+  color: #18181b;
+  margin-bottom: var(--spacing-xs);
+}
+
+.landing-section-sub {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.landing-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 860px) {
+  .landing-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-feature-card {
+  background-color: #ffffff;
+  border: 2px solid #18181b;
+  border-radius: 6px;
+  padding: var(--spacing-lg);
+  box-shadow: 4px 4px 0px #18181b;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-feature-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #18181b;
+}
+
+.bento-feature-card.span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 860px) {
+  .bento-feature-card.span-2 {
+    grid-column: span 1;
+  }
+}
+
+.bento-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.bento-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1.5px solid #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bento-icon-box.yellow { background-color: #ffcc00; color: #18181b; }
+.bento-icon-box.orange { background-color: #ff5733; color: #ffffff; }
+.bento-icon-box.green { background-color: #10b981; color: #ffffff; }
+.bento-icon-box.pink { background-color: #ec4899; color: #ffffff; }
+
+.bento-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #f4f4f5;
+  color: #18181b;
+  border: 1.5px solid #18181b;
+}
+
+.bento-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #18181b;
+  margin-bottom: 6px;
+}
+
+.bento-card-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+.bento-metric-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.metric-pill {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f5;
+  border: 1.5px solid #18181b;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.pill-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: #18181b;
+}
+
+.pill-lbl {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.bento-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.bento-tag-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag-chip {
+  font-size: 11.5px;
+  font-weight: 700;
+  background-color: #ffcc00;
+  border: 1.5px solid #18181b;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #18181b;
+}
+
+/* Process Steps Grid */
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 860px) {
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-step-card {
+  background-color: #ffffff;
+  border: 2px solid #18181b;
+  border-radius: 6px;
+  padding: var(--spacing-lg);
+  box-shadow: 4px 4px 0px #18181b;
+  position: relative;
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  color: #ff5733;
+  margin-bottom: 8px;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #18181b;
+  margin-bottom: 6px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Launch CTA Banner */
+.landing-launch-cta {
+  background-color: #ffcc00;
+  color: #18181b;
+  border: 2.5px solid #18181b;
+  border-radius: 8px;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  box-shadow: 6px 6px 0px #18181b;
+}
+
+.launch-cta-content {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.launch-cta-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background-color: #18181b;
+  color: #ffcc00;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.launch-cta-heading {
+  font-size: clamp(22px, 2.5vw, 32px);
+  line-height: 1.2;
+  font-weight: 900;
+  margin-bottom: var(--spacing-xs);
+}
+
+.launch-cta-desc {
+  font-size: 14px;
+  color: #27272a;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+}
+
+.launch-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.launch-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #18181b;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 4px;
+  box-shadow: 3px 3px 0px #ff5733;
+  transition: all 0.15s ease;
+}
+
+.launch-cta-primary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #ff5733;
+}
+
+.launch-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: #18181b !important;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1.5px solid #18181b;
+  box-shadow: 3px 3px 0px #18181b;
+  transition: all 0.15s ease;
+}
+
+.launch-cta-secondary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #18181b;
+}
+
+
