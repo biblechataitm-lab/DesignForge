@@ -2,41 +2,56 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Palette, Box, Layout, Type, Sparkles, Layers, MousePointer2, Copy, Check, Search, ArrowUpRight } from 'lucide-react';
+import { Layout, Layers, Box, Palette, Type, MousePointer2, Copy, Check, Search, Sparkles, ArrowRight, ArrowUpRight, Star } from 'lucide-react';
 
 const DESIGN_PRESETS = [
   {
-    id: 'neo-brutal',
-    name: 'Neo-Brutalism Kit',
-    category: 'Figma UI Kit • v2.4',
-    primaryColor: '#ff5733',
-    accentColor: '#ffcc00',
-    borderStyle: '2px solid #18181b',
-    shadowStyle: '4px 4px 0px #18181b',
-    tokens: '--radius: 4px; --shadow: 4px 4px 0 #18181b;',
-    author: 'Elena (Design Ops)',
+    id: 'neo-brutalism',
+    name: 'Neo-Brutalism Studio UI Kit',
+    type: 'Design System (Figma & React)',
+    tokens: {
+      border: '2px solid #18181b',
+      radius: '0px (Sharp Geometry)',
+      shadow: '4px 4px 0px #18181b',
+      accent: '#ffcc00 (Sticker Yellow)',
+    },
+    codeSnippet: `:root {
+  --stroke: 2px solid #18181b;
+  --shadow-hard: 4px 4px 0px #18181b;
+  --color-accent: #ffcc00;
+}`,
   },
   {
-    id: 'swiss-minimal',
-    name: 'Swiss Grid System',
-    category: 'Typography & Editorial',
-    primaryColor: '#09090b',
-    accentColor: '#ef4444',
-    borderStyle: '1px solid #e4e4e7',
-    shadowStyle: '0 8px 24px rgba(0,0,0,0.06)',
-    tokens: '--grid-col: 12; --baseline: 8px; --tracking: -0.02em;',
-    author: 'Marcus (Typographer)',
+    id: 'swiss-grid',
+    name: 'Swiss International Typographic',
+    type: 'Typography & Layout Rules',
+    tokens: {
+      border: '1px solid #e4e4e7',
+      radius: '6px (Minimal)',
+      shadow: '0 1px 3px rgba(0,0,0,0.05)',
+      accent: '#e63946 (Crimson Red)',
+    },
+    codeSnippet: `:root {
+  --font-display: 'Neue Haas Grotesk';
+  --baseline-grid: 8px;
+  --color-swiss: #e63946;
+}`,
   },
   {
-    id: 'fluid-3d',
-    name: '3D Glassmorphic Clay',
-    category: 'Spline & 3D Assets',
-    primaryColor: '#8b5cf6',
-    accentColor: '#ec4899',
-    borderStyle: '1px solid rgba(255,255,255,0.4)',
-    shadowStyle: '0 12px 32px rgba(139,92,246,0.25)',
-    tokens: '--glass-blur: 24px; --specular: 0.85; --mesh: active;',
-    author: 'Alex (3D Lead)',
+    id: 'clay-3d',
+    name: 'Glassmorphism & Clay 3D Pack',
+    type: '3D Assets & Shader Textures',
+    tokens: {
+      border: '1px solid rgba(255,255,255,0.2)',
+      radius: '20px (Clay Pill)',
+      shadow: '0 20px 40px rgba(0,0,0,0.1)',
+      accent: '#8b5cf6 (Electric Violet)',
+    },
+    codeSnippet: `:root {
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-blur: blur(16px);
+  --color-glow: #8b5cf6;
+}`,
   },
 ];
 
@@ -48,7 +63,7 @@ export function HeroSection() {
   const currentPreset = DESIGN_PRESETS[activePresetIndex];
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(currentPreset.tokens);
+    navigator.clipboard.writeText(currentPreset.codeSnippet);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -56,26 +71,27 @@ export function HeroSection() {
   return (
     <section className="designforge-hero">
       <div className="designforge-hero-grid">
-        {/* Left: Neo-Brutalist Value Prop */}
+        {/* Left: Neo-Brutalist Value Proposition */}
         <div className="designforge-hero-content">
-          <div className="designforge-sticker-badge">
-            <Sparkles size={14} className="text-black" />
-            <span>Curated UI/UX Assets • Figma • 3D • Design Systems</span>
+          <div className="designforge-badge">
+            <span className="designforge-badge-star">✦</span>
+            <span>The Figma & Design System Foundry • 2026</span>
+            <span className="designforge-badge-tag">v3.0</span>
           </div>
 
           <h1 className="designforge-title">
-            The Raw Index for <span className="designforge-highlight">Elite Figma Kits</span>, 3D Assets & Design Systems.
+            The Design Foundry for <span className="designforge-marker">Figma Kits</span>, 3D Assets & Tokens.
           </h1>
 
           <p className="designforge-lead">
-            Hand-picked design foundations, vector icon sets, production tokens, typography foundries, and shader components for modern product builders.
+            Hand-curated design systems, vector icon sets, wireframe kits, 3D blender assets, and production-ready React component libraries.
           </p>
 
-          {/* Neo-brutalist search bar */}
+          {/* Neo-brutalist Search Box */}
           <form 
             action="/search" 
             method="GET" 
-            className="designforge-search-bar"
+            className="designforge-search-box"
             onSubmit={(e) => {
               if (!searchQuery.trim()) e.preventDefault();
             }}
@@ -84,67 +100,100 @@ export function HeroSection() {
             <input
               type="text"
               name="q"
-              placeholder="Search 5,600+ Figma kits, 3D icons, design systems..."
+              placeholder="Search 5,600+ Figma kits, 3D packs, design tokens..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="designforge-search-input"
             />
             <button type="submit" className="designforge-search-btn">
-              Explore Forge
+              Explore Foundry
             </button>
           </form>
 
-          {/* Design category tags */}
+          {/* Dual Action CTAs */}
+          <div className="designforge-cta-row">
+            <Link href="/category/design" className="designforge-primary-btn">
+              Explore 5,600+ UI Kits <ArrowRight size={15} />
+            </Link>
+            <Link href="/submit" className="designforge-secondary-btn">
+              Submit Design Asset
+            </Link>
+          </div>
+
+          {/* Social Proof */}
+          <div className="designforge-social-proof">
+            <div className="designforge-avatar-stack">
+              <span className="design-avatar av-1">🎨</span>
+              <span className="design-avatar av-2">📐</span>
+              <span className="design-avatar av-3">✨</span>
+              <span className="design-avatar av-4">🖋️</span>
+            </div>
+            <div className="designforge-proof-text">
+              <div className="designforge-proof-stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={12} className="fill-amber-400 text-amber-400" />
+                ))}
+                <span className="designforge-rating">4.9/5.0</span>
+              </div>
+              <span className="designforge-subtext">Used by 120,000+ UI/UX designers and art directors</span>
+            </div>
+          </div>
+
+          {/* Category Pills */}
           <div className="designforge-tags-row">
-            <span className="designforge-tags-label">Categories:</span>
+            <span className="designforge-tags-label">Foundry:</span>
             <div className="designforge-tags-list">
               <Link href="/category/design" className="designforge-tag-pill">
-                <Layout size={12} /> Figma Kits
-              </Link>
-              <Link href="/category/design" className="designforge-tag-pill">
-                <Box size={12} /> 3D Renders
-              </Link>
-              <Link href="/category/developer-tools" className="designforge-tag-pill">
-                <Palette size={12} /> Design Tokens
+                <Layout size={12} /> Figma Systems
               </Link>
               <Link href="/category/productivity" className="designforge-tag-pill">
-                <Type size={12} /> Typography
+                <Box size={12} /> 3D Packs
+              </Link>
+              <Link href="/category/developer-tools" className="designforge-tag-pill">
+                <Palette size={12} /> CSS Tokens
+              </Link>
+              <Link href="/category/ai" className="designforge-tag-pill">
+                <Type size={12} /> Fonts & Icons
               </Link>
             </div>
           </div>
 
-          {/* Metrics */}
+          {/* Brutalist metrics strip */}
           <div className="designforge-metrics-strip">
             <div className="designforge-metric-box">
               <span className="designforge-metric-val">5,600+</span>
-              <span className="designforge-metric-label">UI Kits & Assets</span>
+              <span className="designforge-metric-desc">UI Kits & Assets</span>
             </div>
+            <div className="designforge-metric-divider" />
             <div className="designforge-metric-box">
               <span className="designforge-metric-val">120k+</span>
-              <span className="designforge-metric-label">Figma Duplicates</span>
+              <span className="designforge-metric-desc">Figma Copies</span>
             </div>
+            <div className="designforge-metric-divider" />
             <div className="designforge-metric-box">
               <span className="designforge-metric-val">100%</span>
-              <span className="designforge-metric-label">Vector Precision</span>
+              <span className="designforge-metric-desc">Vector Precision</span>
             </div>
           </div>
         </div>
 
-        {/* Right: Neo-Brutalist Interactive Canvas & Token Inspector */}
+        {/* Right: Interactive Canvas & Token Studio Card */}
         <div className="designforge-canvas-card">
-          {/* Top Bar with Live Collaborator Cursors */}
-          <div className="canvas-card-top">
-            <div className="canvas-tools-group">
-              <span className="canvas-tool-dot" />
-              <span className="canvas-title">Design Token Studio</span>
-            </div>
-            <div className="canvas-collaborator-tag">
-              <MousePointer2 size={12} className="fill-black" />
-              <span>{currentPreset.author}</span>
-            </div>
+          {/* Collaborator Cursor Mock */}
+          <div className="canvas-collaborator-tag">
+            <MousePointer2 size={12} className="fill-blue-500 text-blue-500" />
+            <span>Elena (Design Ops)</span>
           </div>
 
-          {/* Preset Switcher Tabs */}
+          <div className="canvas-header">
+            <div className="canvas-title-group">
+              <span className="canvas-yellow-dot" />
+              <span className="canvas-header-title">Live Token Studio</span>
+            </div>
+            <span className="canvas-preset-type">{currentPreset.type}</span>
+          </div>
+
+          {/* Preset Selector */}
           <div className="canvas-preset-tabs">
             {DESIGN_PRESETS.map((preset, idx) => (
               <button
@@ -153,52 +202,53 @@ export function HeroSection() {
                 className={`canvas-preset-btn ${activePresetIndex === idx ? 'active' : ''}`}
                 type="button"
               >
-                {preset.name}
+                {preset.name.split(' ')[0]}
               </button>
             ))}
           </div>
 
-          {/* Live Component Preview Sandbox */}
-          <div className="canvas-sandbox-window">
-            <div 
-              className="sandbox-sample-card"
-              style={{
-                border: currentPreset.borderStyle,
-                boxShadow: currentPreset.shadowStyle,
-              }}
-            >
-              <div className="sandbox-sample-header">
-                <div className="sandbox-color-swatches">
-                  <span className="swatch" style={{ background: currentPreset.primaryColor }} />
-                  <span className="swatch" style={{ background: currentPreset.accentColor }} />
-                </div>
-                <span className="sandbox-category-badge">{currentPreset.category}</span>
-              </div>
-              <h4 className="sandbox-card-title">{currentPreset.name}</h4>
-              <p className="sandbox-card-desc">Token-driven components with auto-layout and variant properties.</p>
+          {/* Token Visualizer Box */}
+          <div className="canvas-tokens-grid">
+            <div className="token-item">
+              <span className="token-label">Stroke</span>
+              <span className="token-val">{currentPreset.tokens.border}</span>
+            </div>
+            <div className="token-item">
+              <span className="token-label">Border Radius</span>
+              <span className="token-val">{currentPreset.tokens.radius}</span>
+            </div>
+            <div className="token-item">
+              <span className="token-label">Drop Shadow</span>
+              <span className="token-val">{currentPreset.tokens.shadow}</span>
+            </div>
+            <div className="token-item">
+              <span className="token-label">Accent Token</span>
+              <span className="token-val">{currentPreset.tokens.accent}</span>
             </div>
           </div>
 
-          {/* Copyable Token Variables Box */}
-          <div className="canvas-token-box">
-            <div className="token-box-header">
-              <span className="token-label">CSS VARIABLES / TOKENS</span>
+          {/* Interactive CSS Output Preview */}
+          <div className="canvas-code-box">
+            <div className="canvas-code-top">
+              <span className="canvas-code-lang">CSS VARIABLES</span>
               <button 
                 onClick={handleCopy} 
-                className="token-copy-btn"
-                title="Copy Tokens"
+                className="canvas-copy-btn"
+                title="Copy CSS Tokens"
                 type="button"
               >
-                {copied ? <Check size={12} className="text-black" /> : <Copy size={12} />}
-                <span>{copied ? 'Copied!' : 'Copy'}</span>
+                {copied ? <Check size={12} /> : <Copy size={12} />}
+                <span>{copied ? 'Copied' : 'Copy Tokens'}</span>
               </button>
             </div>
-            <code className="token-code-text">{currentPreset.tokens}</code>
+            <pre className="canvas-code-content">
+              <code>{currentPreset.codeSnippet}</code>
+            </pre>
           </div>
 
           {/* Bottom Card Footer */}
           <div className="canvas-card-footer">
-            <span className="canvas-verified-badge">⚡ Auto-Layout Ready</span>
+            <span className="canvas-verified-text">✦ Figma Component Library</span>
             <Link href="/submit" className="canvas-submit-link">
               Submit UI Kit <ArrowUpRight size={13} />
             </Link>

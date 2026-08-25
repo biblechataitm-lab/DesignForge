@@ -567,12 +567,12 @@ a {
   }
 }
 
-.designforge-sticker-badge {
+.designforge-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background-color: var(--badge-bg);
+  background-color: #ffcc00;
   border: 2px solid #18181b;
   box-shadow: 2px 2px 0px #18181b;
   border-radius: var(--radius-main);
@@ -581,6 +581,280 @@ a {
   font-weight: 700;
   color: #000000;
 }
+
+.designforge-badge-star {
+  color: #ff5733;
+}
+
+.designforge-badge-tag {
+  background-color: #18181b;
+  color: #ffffff;
+  font-size: 9.5px;
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+.designforge-marker {
+  background-color: #ffcc00;
+  color: #000000;
+  padding: 1px 6px;
+  border: 2px solid #18181b;
+  box-shadow: 3px 3px 0px #18181b;
+  display: inline-block;
+}
+
+.designforge-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.designforge-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ff5733;
+  color: #ffffff !important;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 10px 20px;
+  border: 2px solid #18181b;
+  box-shadow: 4px 4px 0px #18181b;
+  border-radius: var(--radius-main);
+  transition: all 0.15s ease;
+}
+
+.designforge-primary-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #18181b;
+  background-color: #e04824;
+}
+
+.designforge-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: #18181b !important;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border: 2px solid #18181b;
+  box-shadow: 3px 3px 0px #18181b;
+  border-radius: var(--radius-main);
+  transition: all 0.15s ease;
+}
+
+.designforge-secondary-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #18181b;
+  background-color: #ffcc00;
+}
+
+.designforge-social-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--spacing-md);
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 2px solid #18181b;
+  box-shadow: 3px 3px 0px #18181b;
+  border-radius: var(--radius-main);
+  max-width: fit-content;
+}
+
+.designforge-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.design-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f4f4f5;
+  border: 1.5px solid #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  margin-left: -6px;
+}
+
+.design-avatar:first-child {
+  margin-left: 0;
+}
+
+.designforge-proof-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.designforge-proof-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.designforge-rating {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #18181b;
+  margin-left: 4px;
+}
+
+.designforge-subtext {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.canvas-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.canvas-yellow-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #ffcc00;
+  border: 1.5px solid #18181b;
+  border-radius: 50%;
+}
+
+.canvas-header-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #18181b;
+}
+
+.canvas-preset-type {
+  font-size: 10.5px;
+  font-weight: 700;
+  background-color: #f4f4f5;
+  border: 1px solid #18181b;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #18181b;
+}
+
+.canvas-tokens-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  background-color: #f8fafc;
+  border: 1.5px solid #18181b;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.token-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.token-label {
+  font-size: 9.5px;
+  color: #71717a;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.token-val {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.canvas-code-box {
+  background-color: #18181b;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.canvas-code-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 4px;
+}
+
+.canvas-code-lang {
+  font-size: 9px;
+  font-weight: 700;
+  color: #ffcc00;
+  letter-spacing: 0.5px;
+}
+
+.canvas-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ffcc00;
+  border: 1px solid #18181b;
+  color: #18181b;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.canvas-code-content {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.45;
+  color: #f4f4f5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 70px;
+  overflow-y: auto;
+}
+
+.canvas-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.canvas-verified-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.canvas-submit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #ff5733;
+  font-size: 12px;
+  font-weight: 800;
+  transition: opacity 0.15s ease;
+}
+
+.canvas-submit-link:hover {
+  text-decoration: underline;
+}
+
 
 .designforge-title {
   font-size: clamp(28px, 3.2vw, 44px);
