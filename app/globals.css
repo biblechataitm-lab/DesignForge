@@ -543,3 +543,393 @@ a {
   flex-wrap: wrap;
   gap: var(--spacing-sm);
 }
+
+/* ==========================================================================
+   DesignForge Neo-Brutalist Interactive Studio Hero
+   ========================================================================== */
+.designforge-hero {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.designforge-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .designforge-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.designforge-sticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: var(--badge-bg);
+  border: 2px solid #18181b;
+  box-shadow: 2px 2px 0px #18181b;
+  border-radius: var(--radius-main);
+  margin-bottom: var(--spacing-md);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.designforge-title {
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.15;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-ink);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.designforge-highlight {
+  background-color: #ffcc00;
+  color: #000000;
+  padding: 2px 8px;
+  border: 2px solid #18181b;
+  box-shadow: 3px 3px 0px #18181b;
+  display: inline-block;
+}
+
+.designforge-lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin-bottom: var(--spacing-lg);
+  max-width: 520px;
+}
+
+.designforge-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid #18181b;
+  box-shadow: 4px 4px 0px #18181b;
+  border-radius: var(--radius-main);
+  padding: 4px 6px 4px 14px;
+  margin-bottom: var(--spacing-md);
+  transition: transform 0.15s ease;
+}
+
+.designforge-search-bar:focus-within {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #18181b;
+}
+
+.designforge-search-icon {
+  color: #18181b;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.designforge-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: #18181b;
+  outline: none;
+}
+
+.designforge-search-btn {
+  background-color: #ff5733;
+  color: #ffffff;
+  border: 2px solid #18181b;
+  box-shadow: 2px 2px 0px #18181b;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: var(--radius-main);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.designforge-search-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #18181b;
+  background-color: var(--color-primary-active);
+}
+
+.designforge-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.designforge-tags-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.designforge-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.designforge-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #18181b;
+  background-color: #ffffff;
+  border: 1.5px solid #18181b;
+  box-shadow: 2px 2px 0px #18181b;
+  padding: 3px 10px;
+  border-radius: var(--radius-main);
+  transition: all 0.15s ease;
+}
+
+.designforge-tag-pill:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #18181b;
+  background-color: #ffcc00;
+}
+
+.designforge-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+}
+
+.designforge-metric-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1.5px solid #18181b;
+  box-shadow: 2px 2px 0px #18181b;
+  padding: 6px 12px;
+  border-radius: var(--radius-main);
+}
+
+.designforge-metric-val {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: #18181b;
+}
+
+.designforge-metric-label {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Canvas Studio Card */
+.designforge-canvas-card {
+  background-color: #ffffff;
+  border: 2px solid #18181b;
+  box-shadow: 6px 6px 0px #18181b;
+  border-radius: 6px;
+  padding: var(--spacing-lg);
+}
+
+.canvas-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.canvas-tools-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.canvas-tool-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ff5733;
+  border: 1.5px solid #18181b;
+  border-radius: 50%;
+}
+
+.canvas-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #18181b;
+}
+
+.canvas-collaborator-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ffcc00;
+  border: 1.5px solid #18181b;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.canvas-preset-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.canvas-preset-btn {
+  flex: 1;
+  background-color: #f0f0f0;
+  border: 1.5px solid #18181b;
+  color: #18181b;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.canvas-preset-btn.active {
+  background-color: #ff5733;
+  color: #ffffff;
+  box-shadow: 2px 2px 0px #18181b;
+}
+
+.canvas-sandbox-window {
+  background: #f8fafc;
+  border: 1.5px dashed #18181b;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.sandbox-sample-card {
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.sandbox-sample-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sandbox-color-swatches {
+  display: flex;
+  gap: 6px;
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid #18181b;
+}
+
+.sandbox-category-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #18181b;
+}
+
+.sandbox-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #18181b;
+  margin-bottom: 4px;
+}
+
+.sandbox-card-desc {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.canvas-token-box {
+  background-color: #18181b;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.token-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.token-label {
+  font-size: 9.5px;
+  color: #ffcc00;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.token-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ffcc00;
+  border: 1px solid #18181b;
+  color: #18181b;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.token-code-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #a1a1aa;
+  display: block;
+}
+
+.canvas-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.canvas-verified-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.canvas-submit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #ff5733;
+  font-size: 12px;
+  font-weight: 800;
+  transition: opacity 0.15s ease;
+}
+
+.canvas-submit-link:hover {
+  text-decoration: underline;
+}
+
