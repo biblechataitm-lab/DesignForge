@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { Palette, Layers, Box, Sparkles, ArrowRight, CheckCircle2, Sliders, PenTool, Wand2 } from 'lucide-react';
 
 export function LandingSections() {
@@ -150,12 +149,12 @@ export function LandingSections() {
             Monetize your design assets, grow your Figma Community followers, and gain instant industry recognition.
           </p>
           <div className="launch-cta-buttons">
-            <Link href="/submit" className="launch-cta-primary">
+            <a href="/submit" className="launch-cta-primary">
               Submit Design Asset <ArrowRight size={15} />
-            </Link>
-            <Link href="/category/design" className="launch-cta-secondary">
+            </a>
+            <a href="/category/design" className="launch-cta-secondary">
               Browse Foundry
-            </Link>
+            </a>
           </div>
         </div>
       </section>
