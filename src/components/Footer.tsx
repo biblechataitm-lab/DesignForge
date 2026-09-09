@@ -1,52 +1,55 @@
 import React from 'react';
 import Link from 'next/link';
+import { ExternalLink, MessageCircle, Mail } from 'lucide-react';
 
 export function Footer({ siteName = 'DesignForge' }: { siteName?: string }) {
   return (
-    <footer className="footer-wrapper">
-      <div className="container">
-        <div className="footer-grid">
-          <div>
-            <div className="header-brand" style={{ marginBottom: '12px' }}>
-              <span>{siteName}</span>
-              <span className="header-brand-dot" />
+    <footer className="df-footer">
+      <div className="df-footer-content">
+        <div className="df-footer-top">
+          <div className="df-footer-brand-area">
+            <div className="df-footer-brand"><span>{siteName}</span></div>
+            <p className="df-footer-tagline">The curated design resource directory. Discover UI kits, icon libraries, 3D assets, and design systems for modern digital products.</p>
+            <div className="df-footer-socials">
+              <a href="#" aria-label="Website"><ExternalLink size={16} /></a>
+              <a href="#" aria-label="Community"><MessageCircle size={16} /></a>
+              <a href="#" aria-label="Email"><Mail size={16} /></a>
             </div>
-            <p style={{ fontSize: '13.5px', color: 'var(--text-body)', maxWidth: '320px', lineHeight: 1.6 }}>
-              Neo-brutalist directory for UI/UX kits, 3D assets, design systems, and icon sets.
-            </p>
           </div>
-
-          <div>
-            <h4 className="footer-heading">Discover</h4>
-            <ul className="footer-links">
-              <li><Link href="/">Today's Launches</Link></li>
-              <li><Link href="/trends">Trending Tools</Link></li>
-              <li><Link href="/collections/this-week">Weekly Curations</Link></li>
-              <li><Link href="/collections/this-month">Monthly Roundups</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Publishing</h4>
-            <ul className="footer-links">
-              <li><Link href="/submit">Submit Product</Link></li>
-              <li><Link href="/sponsor">Sponsor Directory</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Legal</h4>
-            <ul className="footer-links">
-              <li><Link href="/privacy">Privacy Policy</Link></li>
-              <li><Link href="/terms">Terms of Service</Link></li>
-            </ul>
+          <div className="df-footer-links-grid">
+            <div>
+              <h4 className="df-footer-heading">Explore</h4>
+              <ul>
+                <li><Link href="/">Today's Launches</Link></li>
+                <li><Link href="/trends">Trending</Link></li>
+                <li><Link href="/collections/this-week">Weekly Top</Link></li>
+                <li><Link href="/collections/this-month">Monthly Top</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="df-footer-heading">Categories</h4>
+              <ul>
+                <li><Link href="/category/ui-kits">UI Kits</Link></li>
+                <li><Link href="/category/icons">Icons</Link></li>
+                <li><Link href="/category/3d---motion">3D & Motion</Link></li>
+                <li><Link href="/category/figma-plugins">Figma Plugins</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="df-footer-heading">Directory</h4>
+              <ul>
+                <li><Link href="/submit">Submit Product</Link></li>
+                <li><Link href="/sponsor">Sponsor</Link></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/privacy">Privacy</Link></li>
+                <li><Link href="/terms">Terms</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div className="footer-bottom">
-          <div>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</div>
-          <div>Powered by Publisher Ad Network</div>
+        <div className="df-footer-bottom">
+          <span>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</span>
+          <span>Powered by the Publisher Ad Network</span>
         </div>
       </div>
     </footer>
