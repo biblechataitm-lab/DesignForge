@@ -1845,3 +1845,71 @@ a {
   gap: 16px;
   min-width: 0;
 }
+
+
+/* ==========================================================================
+   DESIGNFORGE — Minimalist Swiss Artboard Styles
+   ========================================================================== */
+.theme-designforge {
+  background-color: #fafafa;
+  color: #09090b;
+}
+.artboard-hero {
+  padding: 120px 0 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #e4e4e7;
+}
+.artboard-canvas {
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background-image: radial-gradient(#d4d4d8 1px, transparent 1px);
+  background-size: 20px 20px;
+  position: relative;
+  padding: 40px;
+}
+.artboard-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4e4e7;
+  padding-bottom: 16px;
+  margin-bottom: 40px;
+}
+.artboard-tools { display: flex; gap: 8px; }
+.tool-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 6px; border: 1px solid #e4e4e7; font-size: 13px; cursor: pointer; }
+.tool-active { background: #09090b; color: #fff; border-color: #09090b; }
+.artboard-scale { font-size: 12px; color: #71717a; font-family: monospace; }
+.artboard-hero-content { max-width: 680px; position: relative; }
+.artboard-cursor { position: absolute; top: -30px; right: -80px; display: flex; align-items: center; gap: 6px; }
+@media (max-width: 900px) { .artboard-cursor { display: none; } }
+.cursor-pointer { width: 0; height: 0; border-left: 10px solid #2563eb; border-top: 10px solid transparent; border-bottom: 10px solid transparent; transform: rotate(-45deg); }
+.cursor-label { background: #2563eb; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+.artboard-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #71717a; margin-bottom: 12px; }
+.artboard-title { font-size: clamp(34px, 4.5vw, 54px); font-weight: 800; line-height: 1.1; margin-bottom: 18px; letter-spacing: -1px; }
+.artboard-serif { font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+.artboard-desc { font-size: 17px; color: #71717a; line-height: 1.6; margin-bottom: 28px; }
+.artboard-search { display: flex; gap: 10px; max-width: 480px; }
+.artboard-input { flex: 1; border: 1px solid #d4d4d8; border-radius: 8px; padding: 10px 14px; font-size: 14px; outline: none; }
+.artboard-input:focus { border-color: #09090b; }
+.artboard-btn { background: #09090b; color: #fff; border: none; border-radius: 8px; padding: 0 20px; font-weight: 600; cursor: pointer; }
+/* Tokens */
+.artboard-features { padding: 60px 0; }
+.artboard-section-heading { margin-bottom: 32px; }
+.artboard-mini-tag { font-size: 11px; font-family: monospace; color: #71717a; }
+.artboard-token-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 800px) { .artboard-token-grid { grid-template-columns: 1fr; } }
+.token-card { border: 1px solid #e4e4e7; border-radius: 8px; padding: 24px; background: #fff; }
+.token-swatch { width: 36px; height: 36px; border-radius: 6px; margin-bottom: 14px; }
+.swatch-dark { background: #09090b; }
+.swatch-blue { background: #2563eb; }
+.swatch-neutral { background: #e4e4e7; }
+.token-card h4 { font-size: 16px; margin-bottom: 6px; }
+.token-card p { font-size: 13.5px; color: #71717a; line-height: 1.55; }
+/* Nav */
+.artboard-navbar { background: #fff; border-bottom: 1px solid #e4e4e7; position: sticky; top: 0; z-index: 100; height: 60px; }
+.artboard-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.artboard-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #09090b; text-decoration: none; font-size: 16px; }
+.logo-box { background: #09090b; color: #fff; font-size: 11px; padding: 2px 6px; border-radius: 4px; }
+.artboard-nav-links { display: flex; gap: 24px; font-size: 14px; }
+.artboard-nav-links a { color: #71717a; text-decoration: none; }
+.artboard-nav-btn { border: 1px solid #09090b; color: #09090b; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; }

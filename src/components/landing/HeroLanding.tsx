@@ -1,66 +1,38 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { Search, ArrowRight, TrendingUp } from 'lucide-react';
+import React from 'react';
 
 export function HeroLanding() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-    const children = hero.querySelectorAll('.df-animate');
-    children.forEach((el, i) => {
-      const htmlEl = el as HTMLElement;
-      htmlEl.style.opacity = '0';
-      htmlEl.style.transform = 'translateY(24px)';
-      setTimeout(() => {
-        htmlEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        htmlEl.style.opacity = '1';
-        htmlEl.style.transform = 'translateY(0)';
-      }, 100 + i * 100);
-    });
-  }, []);
-
   return (
-    <section ref={heroRef} className="df-hero">
-      <div className="df-hero-bg" aria-hidden="true" />
-      <div className="df-hero-container">
-        <div className="df-hero-content">
-          <div className="df-animate df-hero-badge">
-            <span>Where Design Meets Code</span>
-          </div>
-          <h1 className="df-animate df-hero-title">
-            Your Creative{' '}
-            <span className="df-accent-text">Design Arsenal</span>
-          </h1>
-          <p className="df-animate df-hero-subtitle">
-            Discover 1,600+ curated design tools — from Figma plugins and icon libraries to 3D assets, motion kits, and component systems.
-          </p>
-          <form
-            className="df-animate df-hero-search"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const input = e.currentTarget.querySelector('input');
-              if (input?.value.trim()) {
-                window.location.href = `/search?q=${encodeURIComponent(input.value.trim())}`;
-              }
-            }}
-          >
-            <Search size={16} className="df-hero-search-icon" />
-            <input type="text" placeholder="Search design tools, Figma plugins..." />
-            <button type="submit">Explore <ArrowRight size={14} /></button>
-          </form>
-          <div className="df-animate df-hero-tags">
-            <a href="/category/design" className="df-tag">UI Kits</a>
-            <a href="/category/developer-tools" className="df-tag">Dev Design</a>
-            <a href="/category/ai" className="df-tag">AI Design</a>
-            <a href="/trends" className="df-tag df-tag-hot">
-              <TrendingUp size={12} /> Trending
-            </a>
-          </div>
-        </div>
+    <section class="artboard-hero">
+  <div class="artboard-canvas container">
+    <div class="artboard-toolbar">
+      <div class="artboard-tools">
+        <span class="tool-btn tool-active" title="Select">↖</span>
+        <span class="tool-btn" title="Frame">#</span>
+        <span class="tool-btn" title="Pen">✎</span>
+        <span class="tool-btn" title="Text">T</span>
       </div>
-    </section>
+      <span class="artboard-scale">100% · Canvas Active</span>
+    </div>
+    <div class="artboard-hero-content">
+      <div class="artboard-cursor cursor-1">
+        <span class="cursor-pointer"></span>
+        <span class="cursor-label">@sarah: "Check this icon kit"</span>
+      </div>
+      <div class="artboard-tag">THE CRAFT DIRECTORY</div>
+      <h1 class="artboard-title">
+        The Studio for <span class="artboard-serif">Excellence in Design</span>
+      </h1>
+      <p class="artboard-desc">
+        A curated showcase of world-class UI component libraries, vector iconography, motion frameworks, and typography.
+      </p>
+      <div class="artboard-search">
+        <input type="text" placeholder="Search icon sets, shaders, Figma kits..." class="artboard-input" />
+        <button class="artboard-btn">Explore Craft</button>
+      </div>
+    </div>
+  </div>
+</section>
   );
 }
