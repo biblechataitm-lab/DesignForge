@@ -194,42 +194,59 @@ a {
 .category-chips-wrapper {
   margin-bottom: var(--spacing-lg);
   overflow-x: auto;
-  white-space: nowrap;
   scrollbar-width: none;
-  padding: 4px 0;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 0 10px;
+  width: 100%;
 }
 
 .category-chips-wrapper::-webkit-scrollbar { display: none; }
 
+.category-chips-scroll,
 .category-chips-list {
-  display: flex;
-  gap: var(--spacing-xs);
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: nowrap !important;
+  width: max-content;
+  padding: 2px 2px;
 }
 
-.category-chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  font-size: 13px;
-  font-weight: 500;
-  background-color: var(--bg-surface);
-  color: var(--text-body);
-  border: 1px solid var(--border-color);
-  transition: all 0.15s ease;
-  cursor: pointer;
+.category-chip,
+.chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 18px !important;
+  border-radius: 9999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  background-color: #ffffff !important;
+  color: #3f3f46 !important;
+  border: 1px solid #d4d4d8 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
 
-.category-chip:hover {
-  background-color: var(--bg-surface-soft);
-  color: var(--text-ink);
-  border-color: var(--border-bright);
+.category-chip:hover,
+.chip:hover {
+  background-color: #f4f4f5 !important;
+  color: #09090b !important;
+  border-color: #09090b !important;
+  transform: translateY(-1px) !important;
 }
 
-.category-chip.active {
-  background-color: var(--color-primary);
-  color: var(--color-primary-text);
-  border-color: var(--color-primary);
+.category-chip.active,
+.category-chip.chip-active,
+.chip.active,
+.chip.chip-active {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+  border-color: #09090b !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
 }
 
 .product-card {

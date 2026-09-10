@@ -44,7 +44,7 @@ export function CategoryChips({ activeCategory }: { activeCategory?: string }) {
             <a
               key={cat.path}
               href={cat.path}
-              className={`chip ${isActive ? 'chip-active' : ''}`}
+              className={`category-chip ${isActive ? 'active chip-active' : ''}`}
             >
               {cat.label}
             </a>
