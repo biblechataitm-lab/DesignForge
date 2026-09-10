@@ -3,10 +3,10 @@
 import React from 'react';
 
 const STATS = [
-  { value: '1,600+', label: 'Design Tools' },
-  { value: '500+', label: 'Components' },
-  { value: '25K+', label: 'Designers' },
-  { value: '97%', label: 'Satisfaction' },
+  { value: '100%', label: 'Direct Maker Submissions' },
+  { value: 'Realtime', label: 'Verified Catalog Updates' },
+  { value: 'Community', label: 'Upvote & Feedback Engine' },
+  { value: 'Zero Tracking', label: 'Privacy First Directory' },
 ];
 
 export function StatsSection() {
